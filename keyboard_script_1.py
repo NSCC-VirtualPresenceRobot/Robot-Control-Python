@@ -96,7 +96,7 @@ def forward():
     back_left_pwm.ChangeDutyCycle(100)
     back_right_pwm.ChangeDutyCycle(100)
     
-    movement_status = "Moving Forward"
+    movement_status = "Move Forward"
     
 def backward():
     global movement_status
@@ -118,7 +118,7 @@ def backward():
     back_left_pwm.ChangeDutyCycle(100)
     back_right_pwm.ChangeDutyCycle(100)
     
-    movement_status = "Moving Backward"
+    movement_status = "Move Backward"
     
 def strafe_left():
     global movement_status
@@ -141,7 +141,7 @@ def strafe_left():
     back_left_pwm.ChangeDutyCycle(100)
     back_right_pwm.ChangeDutyCycle(100)
     
-    movement_status = "Moving Left"
+    movement_status = "Move Left"
 
 def strafe_right():
     global movement_status
@@ -164,7 +164,7 @@ def strafe_right():
     back_left_pwm.ChangeDutyCycle(100)
     back_right_pwm.ChangeDutyCycle(100)
     
-    movement_status = "Moving Right"
+    movement_status = "Move Right"
     
 def turn_right():
     global movement_status
@@ -186,7 +186,7 @@ def turn_right():
     back_left_pwm.ChangeDutyCycle(100)
     back_right_pwm.ChangeDutyCycle(100)
     
-    movement_status = "Turning Right"
+    movement_status = "Turn Right"
     
     
 def turn_left():
@@ -210,7 +210,200 @@ def turn_left():
     back_left_pwm.ChangeDutyCycle(100)
     back_right_pwm.ChangeDutyCycle(100)
     
-    movement_status = "Turning Left"
+    movement_status = "Turn Left"
+    
+    
+def forward_left():
+    global movement_status
+    
+    GPIO.output(con1in1,GPIO.LOW)
+    GPIO.output(con1in2,GPIO.HIGH)
+    
+    GPIO.output(con1in3,GPIO.LOW)
+    GPIO.output(con1in4,GPIO.LOW)
+    
+    GPIO.output(con2in1,GPIO.LOW)
+    GPIO.output(con2in2,GPIO.LOW)
+    
+    GPIO.output(con2in3,GPIO.HIGH)
+    GPIO.output(con2in4,GPIO.LOW)
+    
+    
+    front_right_pwm.ChangeDutyCycle(100)
+    front_left_pwm.ChangeDutyCycle(100)
+    back_left_pwm.ChangeDutyCycle(100)
+    back_right_pwm.ChangeDutyCycle(100)
+    
+    movement_status = "Steer FL"
+    
+
+def forward_right():
+    global movement_status
+    
+    GPIO.output(con1in1,GPIO.LOW)
+    GPIO.output(con1in2,GPIO.LOW)
+    
+    GPIO.output(con1in3,GPIO.LOW)
+    GPIO.output(con1in4,GPIO.HIGH)
+    
+    GPIO.output(con2in1,GPIO.LOW)
+    GPIO.output(con2in2,GPIO.HIGH)
+    
+    GPIO.output(con2in3,GPIO.LOW)
+    GPIO.output(con2in4,GPIO.LOW)
+    
+    
+    front_right_pwm.ChangeDutyCycle(100)
+    front_left_pwm.ChangeDutyCycle(100)
+    back_left_pwm.ChangeDutyCycle(100)
+    back_right_pwm.ChangeDutyCycle(100)
+    
+    movement_status = "Steer FR"
+    
+    
+# def backward_left():
+#     global movement_status
+#     
+#     GPIO.output(con1in1,GPIO.HIGH)
+#     GPIO.output(con1in2,GPIO.LOW)
+#     
+#     GPIO.output(con1in3,GPIO.LOW)
+#     GPIO.output(con1in4,GPIO.LOW)
+#     
+#     GPIO.output(con2in1,GPIO.LOW)
+#     GPIO.output(con2in2,GPIO.LOW)
+#     
+#     GPIO.output(con2in3,GPIO.LOW)
+#     GPIO.output(con2in4,GPIO.HIGH)
+#     
+#     
+#     front_right_pwm.ChangeDutyCycle(100)
+#     front_left_pwm.ChangeDutyCycle(100)
+#     back_left_pwm.ChangeDutyCycle(100)
+#     back_right_pwm.ChangeDutyCycle(100)
+#     
+#     movement_status = "Steer BL"
+#     
+#     
+# def backward_right():
+#     global movement_status
+#     
+#     GPIO.output(con1in1,GPIO.LOW)
+#     GPIO.output(con1in2,GPIO.LOW)
+#     
+#     GPIO.output(con1in3,GPIO.HIGH)
+#     GPIO.output(con1in4,GPIO.LOW)
+#     
+#     GPIO.output(con2in1,GPIO.HIGH)
+#     GPIO.output(con2in2,GPIO.LOW)
+#     
+#     GPIO.output(con2in3,GPIO.LOW)
+#     GPIO.output(con2in4,GPIO.LOW)
+#     
+#     
+#     front_right_pwm.ChangeDutyCycle(100)
+#     front_left_pwm.ChangeDutyCycle(100)
+#     back_left_pwm.ChangeDutyCycle(100)
+#     back_right_pwm.ChangeDutyCycle(100)
+#     
+#     movement_status = "Steer BR"
+    
+
+def diagonal_up_left():
+    global movement_status
+    
+    GPIO.output(con1in1,GPIO.LOW)
+    GPIO.output(con1in2,GPIO.HIGH)
+    
+    GPIO.output(con1in3,GPIO.LOW)
+    GPIO.output(con1in4,GPIO.LOW)
+    
+    GPIO.output(con2in1,GPIO.LOW)
+    GPIO.output(con2in2,GPIO.HIGH)
+    
+    GPIO.output(con2in3,GPIO.LOW)
+    GPIO.output(con2in4,GPIO.LOW)
+    
+    
+    front_right_pwm.ChangeDutyCycle(100)
+    front_left_pwm.ChangeDutyCycle(100)
+    back_left_pwm.ChangeDutyCycle(100)
+    back_right_pwm.ChangeDutyCycle(100)
+    
+    movement_status = "Diagonal"
+    
+    
+def diagonal_up_right():
+    global movement_status
+    
+    GPIO.output(con1in1,GPIO.LOW)
+    GPIO.output(con1in2,GPIO.LOW)
+    
+    GPIO.output(con1in3,GPIO.LOW)
+    GPIO.output(con1in4,GPIO.HIGH)
+    
+    GPIO.output(con2in1,GPIO.LOW)
+    GPIO.output(con2in2,GPIO.LOW)
+    
+    GPIO.output(con2in3,GPIO.HIGH)
+    GPIO.output(con2in4,GPIO.LOW)
+    
+    
+    front_right_pwm.ChangeDutyCycle(100)
+    front_left_pwm.ChangeDutyCycle(100)
+    back_left_pwm.ChangeDutyCycle(100)
+    back_right_pwm.ChangeDutyCycle(100)
+    
+    movement_status = "Diagonal"
+    
+
+def diagonal_back_left():
+    global movement_status
+    
+    GPIO.output(con1in1,GPIO.LOW)
+    GPIO.output(con1in2,GPIO.LOW)
+    
+    GPIO.output(con1in3,GPIO.HIGH)
+    GPIO.output(con1in4,GPIO.LOW)
+    
+    GPIO.output(con2in1,GPIO.LOW)
+    GPIO.output(con2in2,GPIO.LOW)
+    
+    GPIO.output(con2in3,GPIO.LOW)
+    GPIO.output(con2in4,GPIO.HIGH)
+    
+    
+    front_right_pwm.ChangeDutyCycle(100)
+    front_left_pwm.ChangeDutyCycle(100)
+    back_left_pwm.ChangeDutyCycle(100)
+    back_right_pwm.ChangeDutyCycle(100)
+    
+    movement_status = "Diagonal"
+    
+    
+def diagonal_back_right():
+    global movement_status
+    
+    GPIO.output(con1in1,GPIO.HIGH)
+    GPIO.output(con1in2,GPIO.LOW)
+    
+    GPIO.output(con1in3,GPIO.LOW)
+    GPIO.output(con1in4,GPIO.LOW)
+    
+    GPIO.output(con2in1,GPIO.HIGH)
+    GPIO.output(con2in2,GPIO.LOW)
+    
+    GPIO.output(con2in3,GPIO.LOW)
+    GPIO.output(con2in4,GPIO.LOW)
+    
+    
+    front_right_pwm.ChangeDutyCycle(100)
+    front_left_pwm.ChangeDutyCycle(100)
+    back_left_pwm.ChangeDutyCycle(100)
+    back_right_pwm.ChangeDutyCycle(100)
+    
+    movement_status = "Diagonal"
+    
     
 def stop():
     global movement_status
@@ -224,7 +417,7 @@ def stop():
     
 #device = InputDevice('/dev/input/event3')
     
-device = InputDevice('/dev/input/event0')
+device = InputDevice('/dev/input/event1')
 
 def handle_movement():
     #track state of each directional key
@@ -255,6 +448,21 @@ def handle_movement():
                             turn_left()
                         elif direction_pressed[ecodes.KEY_RIGHT]:
                             turn_right()
+                            
+                        if direction_pressed[ecodes.KEY_W] and direction_pressed[ecodes.KEY_A]:
+                            diagonal_up_left()
+                        elif direction_pressed[ecodes.KEY_W] and direction_pressed[ecodes.KEY_D]:
+                            diagonal_up_right()
+                        elif direction_pressed[ecodes.KEY_S] and direction_pressed[ecodes.KEY_A]:
+                            diagonal_back_left()
+                        elif direction_pressed[ecodes.KEY_S] and direction_pressed[ecodes.KEY_D]:
+                            diagonal_back_right()
+                            
+                        if direction_pressed[ecodes.KEY_W] and direction_pressed[ecodes.KEY_LEFT]:
+                            forward_left()
+                        elif direction_pressed[ecodes.KEY_W] and direction_pressed[ecodes.KEY_RIGHT]:
+                            forward_right()
+                            
                     else:
                         stop()
                 elif event.value == 0:
@@ -272,18 +480,28 @@ def update_lcd():
             lcd.clear()
             if movement_status == "Hello World":
                 lcd.write_string("     Hello\n\r     World!")
-            elif movement_status == "Moving Forward":
+            elif movement_status == "Move Forward":
                 lcd.write_string("     Moving\n\r    Forward!")
-            elif movement_status == "Moving Backward":
+            elif movement_status == "Move Backward":
                 lcd.write_string("     Moving\n\r    Backward!")
-            elif movement_status == "Moving Left":
+            elif movement_status == "Move Left":
                 lcd.write_string("     Moving\n\r     Left!")
-            elif movement_status == "Moving Right":
+            elif movement_status == "Move Right":
                 lcd.write_string("     Moving\n\r     Right!")
-            elif movement_status == "Turning Left":
+            elif movement_status == "Turn Left":
                 lcd.write_string("    Turning\n\r     Left!")
-            elif movement_status == "Turning Right":
+            elif movement_status == "Turn Right":
                 lcd.write_string("    Turning\n\r    Right!")
+            elif movement_status == "Steer FR":
+                lcd.write_string("    Steering\n\r     Right!")
+            elif movement_status == "Steer FL":
+                lcd.write_string("    Steering\n\r     Left!")
+            elif movement_status == "Steer BR":
+                lcd.write_string("   Reversing\n\r    Right!")
+            elif movement_status == "Steer BL":
+                lcd.write_string("   Reversing\n\r     Left!")
+            elif movement_status == "Diagonal":
+                lcd.write_string("     Moving\n\r   Diagonally!")
             prev_status = movement_status
         
         
